@@ -83,7 +83,7 @@ end
 
 # Index (venues)
 get '/venues' do  
-	@venues = Venue.all  
+	@venues = Venue.all.order(:capacity)  
 	erb :venues 
 end
 

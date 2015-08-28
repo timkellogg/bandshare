@@ -1,23 +1,31 @@
-<table>
-	<caption>Full Concert Listing</caption>
-	<thead>
-		<tr>
-			<th>Location</th>
-			<th>Venue</th>
-			<th>Band</th>
-			<th>Attendance</th>
-			<th>Date</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @concerts.each do |concert| %>
+<div id="bands-wrapper" class="container">
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h1 id="title-font">Concert Listing</h1>
+		</div>
+	</div>
+<% if @concerts.any? %>
+	<table>
+		<thead>
 			<tr>
-				<td><%= concert.venue.country %>, <%= concert.venue.city %></td>
-				<td><%= concert.venue.name %></td>
-				<td><%= concert.band.name %></td>
-				<td><%= concert.attendance %></td>
-				<td><%= concert.date %></td>
+				<th>Location</th>
+				<th>Venue</th>
+				<th>Band</th>
+				<th>Attendance</th>
+				<th>Date</th>
 			</tr>
-		<% end %>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<% @concerts.each do |concert| %>
+				<tr>
+					<td><%= concert.venue.country %>, <%= concert.venue.city %></td>
+					<td><%= concert.venue.name %></td>
+					<td><%= concert.band.name %></td>
+					<td><%= concert.attendance %></td>
+					<td><%= concert.date %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
+</div>

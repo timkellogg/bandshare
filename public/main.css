@@ -35,11 +35,22 @@ body {
 
 /*show band page*/
 #band-show-wrapper {
+  background: url('/img/bandbg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 
 }
 
 #venues-wrapper {
-  
+  background: url('/img/venuesbg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 }
 
 #venue-show-wrapper {
@@ -69,16 +80,17 @@ table {
   margin: 2em auto;
 }
 
-#bands-table {
+table {
   opacity: .8;
 }
 
-#bands-table tr td {
+table tr td {
   padding: 2em;
 }
 
-#bands-table tr th {
-  font-size: 2em;
+table tr th {
+  font-size: 4em;
+  text-align: center;
 }
 
 /* Typography 
@@ -101,9 +113,37 @@ h1 {
   text-shadow: 2px 2px #333;
 }
 
+.section-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 6em;
+  color: #000;
+  font-weight: 600;
+  margin-top: .25em;
+  display: inline-block;
+  background-color: white;
+  padding: .25em;
+  opacity: .8;
+}
+
 .section-heading {
   font-size: 6em;
   color: #333;
+}
+
+.band-section {
+  opacity: .8;
+  display: inline-block;
+  background-color: white;
+  padding: .25em;
+  color: #000;
+}
+
+.band-section-heading {
+  display: inline-block;
+  padding: .4;
+  color: #fff;
+  font-style: 4.8em;
+  background-color: #000;
 }
 
 #brand {

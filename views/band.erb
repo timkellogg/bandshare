@@ -1,22 +1,22 @@
 <div id="band-show-wrapper">
 	<div class="row">
-		<div class="large-12 columns text-center">
-			<h2 class="section-heading"><%= @band.name %></h2>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="large-12 columns text-center">
-			<h2 class="subheader"><%= @band.music_style %></h2>
-			<p><%= @band.bio %></p>
+		<div class="large-12 columns text-left">
+			<h1 class="section-title"><%= @band.name %></h1>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="large-12 columns text-left">
-			<h3 class="subheader">Recent Concerts</h3>
+			<h2 class="band-section-heading"><%= @band.music_style %></h2>
+			<p class="band-section"><%= @band.bio %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns text-left">
+			<h3 class="band-section-heading">Recent Concerts</h3>
 			<% if @band.concerts.any? %>
-				<ul>
+				<ul class="band-section">
 					<% @band.concerts.each do |concert| %>
 						<li><b><%= concert.venue.name %></b>: <%= concert.venue.country %>, <%= concert.venue.city %> (<%= concert.attendance %>)</li>
 					<% end %>

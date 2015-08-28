@@ -11,11 +11,19 @@
 }
 
 body {
+}
+
+#index-wrapper {  
   background: url('/img/bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 100%;
+}
+
+#bands-wrapper {
+  
 }
 
 /* Forms 
@@ -37,3 +45,9 @@ h1 {
 	font-weight: 700;
 	margin-top: .25em;
 }
+
+.section-heading {
+  font-size: 6em;
+  color: #333;
+}
+

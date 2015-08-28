@@ -8,14 +8,15 @@ after { ActiveRecord::Base.connection.close }
 # Bands
 
 # Landing page
-# get '/' do 
-# 	erb :index
-# end
+get '/' do 
+	erb :index
+end
 
 # # Index (bands)
-# get '/bands' do 
-# 	erb :bands 
-# end
+get '/bands' do 
+	@bands = Band.all.order(:created_at) 
+	erb :bands 
+end
 
 # # Show (bands)
 # get '/bands/:id' do  

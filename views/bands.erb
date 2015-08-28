@@ -1,1 +1,33 @@
-@bands 
+<div id="bands-wrapper" class="container">
+	</div>
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2 class="section-heading">Bands</h2>
+		</div>
+	</div>
+
+	<% if @bands.any? %>
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<table>
+				<caption>Band Charts</caption>
+				<thead>
+					<tr>
+						<th>Band Name</th>
+						<th>Origin</th>
+						<th>Music Style<th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @bands.each do |band| %>
+					<tr>
+						<td><%= band.name %></td>
+						<td><%= band.country_from %></td>
+						<td><%= band.music_style %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<% end %>

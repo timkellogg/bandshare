@@ -79,7 +79,7 @@ get '/bands/:id/delete' do
 	end
 end
 
-# # Venues 
+########### Venues ##############
 
 # Index (venues)
 get '/venues' do  
@@ -98,7 +98,6 @@ get '/venues/:id' do
 	erb :venue 
 end
 
-
 # Create (venues)
 post '/venues' do  
 	name = params['name']
@@ -107,37 +106,37 @@ post '/venues' do
 	pic_link = params['pic_link']
 	country = params['country']
 
-	venue = Venue.new(name: name, city: city, country: country, capacity: capacity, pic_link: pic_link)
-	binding.pry
-	if venue.save 
-		binding.pry
+	@venue = Venue.new(name: name, city: city, country: country, capacity: capacity, pic_link: pic_link)
+	if @venue.save 
 		erb :venue 
 	else 
-		binding.pry
 		redirect "/venues/new"
 	end
 end
 
+# Edit (venues)
+get '/venues/:id/edit' do
+	@venue = Venue.find(params['id'])  
+	erb :edit_venue_form 
+end
 
+# Update (venues)
+patch '/venues/:id' do  
+	@venue = Venue.find(params['id'])
 
+	name = params['name']
+	city = params['city']
+	capacity = params['capacity'].to_i
+	pic_link = params['pic_link']
+	country = params['country']
 
-# # Edit (venues)
-# get '/venues/:id/edit' do  
-# 	erb :edit_venue_form 
-# end
+	if @venue.update(name: name, city: city, capacity: capacity, pic_link: pic_link, country: country)
+		erb :venue 
+	else 
+		redirect "/venues/#{venue.id}/edit"
+	end
+end
 
-# # Update (venues)
-# patch '/bands/:id' do  
-# 	@venue = Venue.find(params['id'])
-
-# 	# Fetch params 
-
-# 	if @venue.update({})
-# 		erb: venue 
-# 	else 
-# 		redirect "/venues/#{venue.id}/edit"
-# 	end
-# end
 
 # # Delete (venues)
 # get '/venues/:id/delete' do  

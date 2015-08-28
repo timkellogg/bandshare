@@ -1,4 +1,58 @@
-<form action="" method="get" accept-charset="utf-8">
-	
+<div id="form-wrapper" class="container">
 
-</form>
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2>Register a New Venue</h2>
+		</div>
+	</div>
+
+	<form action="/venues/<%= @venue.id %>" method="post" data-abide>
+  	<input name="_method" type="hidden" value="patch">
+
+		<div class="row">
+			<div class="large-5 text-center columns">
+				<label for="name">Venue Name:</label>
+				<input type="text" name="name" class="error" required value="<%= @venue.name %>">	
+				<small class="error">A Venue name is required!</small>
+			</div>
+
+			<div class="large-4 text-center columns">
+				<label for="country">What County is the Venue Located in?</label>
+      	<input type="text" name="country" required class="error" value="<%= @venue.country %>">
+      	<small class="error">We need to know what country the venue is in!</small>
+			</div>
+
+			<div class="large-3 text-center columns">
+				<label for="city">What City is the Venue Located in?</label>
+      	<input type="text" name="city" required class="error" value="<%= @venue.city %>">
+      	<small class="error">We need to know what city the venue is in!</small>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-8 columns text-center">
+				<label for="pic_link">Link us a Picture for the Homepage</label>
+				<input type="text" required class="error" name="pic_link" value="<%= @venue.pic_link %>">
+				<small class="error">You should link us a cool picture.</small>
+			</div>	
+
+			<div class="large-4 columns text-center">
+				<label for="capacity">What's the Capacity?</label>
+				<input type="text" required class="error" name="capacity" value="<%= @venue.capacity %>">
+				<small class="error">You need to tell us how many people can fit.</small>				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<button type="submit">Edit Venue</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+
+
+
+

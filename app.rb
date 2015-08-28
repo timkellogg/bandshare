@@ -87,16 +87,16 @@ get '/venues' do
 	erb :venues 
 end
 
-# # Show (venues)
-# get '/venues/:id' do  
-# 	@venue = Venue.find(params['id'])
-# 	erb :venue 
-# end
+# New (venues)
+get '/venues/new' do  
+	erb :create_venue_form 
+end
+# Show (venues)
+get '/venues/:id' do  
+	@venue = Venue.find(params['id'])
+	erb :venue 
+end
 
-# # New (venues)
-# get '/venues/new' do  
-# 	erb :create_venue_form 
-# end
 
 # # Create (venues)
 # post '/venues' do  

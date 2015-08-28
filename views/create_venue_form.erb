@@ -1,4 +1,47 @@
-<form action="" method="get" accept-charset="utf-8">
-	
-	get
-</form>
+<div id="form-wrapper" class="container">
+
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2>Register a New Venue</h2>
+		</div>
+	</div>
+
+	<form action="/venues" method="post" accept-charset="utf-8" data-abide>
+		<div class="row">
+			<div class="large-5 text-center columns">
+				<label for="venue_name">Venue Name:</label>
+				<input type="text" name="venue_name" class="error" required>	
+				<small class="error">A Venue name is required!</small>
+			</div>
+
+			<div class="large-4 text-center columns">
+				<label for="country">What County is the Venue Located in?</label>
+      	<input type="text" name="country" required class="error">
+      	<small class="error">We need to know what country the venue is in!</small>
+			</div>
+
+			<div class="large-3 text-center columns">
+				<label for="city">What City is the Venue Located in?</label>
+      	<input type="text" name="city" required class="error">
+      	<small class="error">We need to know what city the venue is in!</small>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<label for="pic_link">Link us a Picture for the Homepage</label>
+				<input type="text" required class="error" name="pic_link">
+				<small class="error">You should link us a cool picture.</small>
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<button type="submit">Register Venue!</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+

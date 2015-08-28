@@ -1,1 +1,24 @@
-@venue 
+<div id="venue-show-wrapper">
+	<div class="row">
+		<div class="large-12 columns text-left">
+			<h2 class="section-heading"><%= @venue.name %> | <small><%= @venue.city %>, <%= @venue.country %></small></h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns text-left">
+			<h2 class="section-header">Capacity: <small><%= @venue.capacity %></small></h2>
+
+				<!-- List recent concerts and Bands that played here -->
+		</div>
+	</div>
+
+	<hr>
+	<div class="row">
+	  <div id="edit-panel" class="large-12 columns text-center">
+	    <a class="button info" href="/venues/<%= @venue.id %>/edit">Edit</a>
+	    <a class="button warning" href="/venues/<%= @venue.id %>/delete">Delete</a>
+	    <a class="button" href="/venues">View all</a>
+	  </div>
+	</div>
+</div>

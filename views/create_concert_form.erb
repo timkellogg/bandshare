@@ -11,33 +11,40 @@
 		<div class="row">
 			<div class="large-6 text-center columns">
 				<label for="band">Venue Name:</label>
-				<select name="band">
-						<% @bands.each do |band| %>
-							<option value="<%= band.id %>"><%= band.name %></option>
-						<% end %>					
+				<select required name="band" class="error">
+					<option></option>
+					<% @bands.each do |band| %>
+						<option value="<%= band.id %>"><%= band.name %></option>
+					<% end %>					
 				</select>
 				<small class="error">A band is required!</small>
 			</div>
 
 			<div class="large-6 text-center columns">
 				<label for="venue">Venue Name:</label>
-				<select name="venue">
-						<% @venues.each do |venue| %>
-							<option value="<%= venue.id %>"><%= venue.name %></option>
-						<% end %>					
+				<select name="venue" required class="error">
+					<option></option>
+					<% @venues.each do |venue| %>
+						<option value="<%= venue.id %>"><%= venue.name %></option>
+					<% end %>					
 				</select>
 				<small class="error">A venue is required!</small>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="large-3 text-center columns">
-				<label for="city">When is/was the concert?</label>
-      	<input id="datepicker" type="text" name="city" required class="error">
+			<div class="large-6 text-center columns">
+				<label for="attendance">Attendance (expected):</label>
+      	<input  type="text" name="city" required class="error">
+      	<small class="error">We need to know what when the concert is!</small>
+			</div>
+
+			<div class="large-6 text-center columns">
+				<label for="city">Concert Date:</label>
+      	<input type="text" name="city" required class="error">
       	<small class="error">We need to know what when the concert is!</small>
 			</div>
 		</div>
-
 
 
 		<div class="row">

@@ -160,7 +160,6 @@ end
 # Index (concerts)
 get '/concerts' do 
 	@concerts = Concert.all 
-	binding.pry
 	erb :concerts 
 end
 
@@ -179,10 +178,8 @@ post '/concerts' do
 	attendance = params['attendance']
 
 	@concert = Concert.new(band_id: params['band'], venue_id: params['venue'], date: date, attendance: attendance )
-	binding.pry
-	# @band.venues.push(@venue)
+	
 	if @concert.save 
-		binding.pry
 		redirect '/concerts'
 	else 
 		redirect '/concerts/new'

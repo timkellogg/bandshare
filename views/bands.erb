@@ -1,16 +1,14 @@
 <div id="bands-wrapper" class="container">
-	</div>
 	<div class="row">
 		<div class="large-12 columns text-center">
-			<h2 class="section-heading">Bands</h2>
+			<h1 id="title-font">Bands</h1>
 		</div>
 	</div>
 
 	<% if @bands.any? %>
 	<div class="row">
 		<div class="large-12 columns text-center">
-			<table>
-				<caption>Band Charts</caption>
+			<table id="bands-table">
 				<thead>
 					<tr>
 						<th>Band Name</th>
@@ -32,4 +30,5 @@
 			</table>
 		</div>
 	</div>
+</div>
 <% end %>

@@ -13,13 +13,12 @@
 	</div>
 
 	<div class="row">
-		<div class="large-12 columns text-center">
+		<div class="large-12 columns text-left">
 			<h3 class="subheader">Recent Concerts</h3>
-
 			<% if @band.concerts.any? %>
 				<ul>
 					<% @band.concerts.each do |concert| %>
-						<li><%= concert.venue.country %>, <%= concert.venue.city %> (<%= concert.attendance %>)</li>
+						<li><b><%= concert.venue.name %></b>: <%= concert.venue.country %>, <%= concert.venue.city %> (<%= concert.attendance %>)</li>
 					<% end %>
 				</ul>
 			<% end %>

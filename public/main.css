@@ -24,7 +24,13 @@ body {
 
 /*index band page*/
 #bands-wrapper {
-  
+  background: url('/img/concertbg.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+
 }
 
 /*show band page*/
@@ -40,6 +46,18 @@ body {
 
 }
 
+#index-button-container {
+  margin-top: 2em;
+
+  padding: 1em;
+}
+
+#index-button-container a {
+  opacity: .7;
+  border: 5px solid white;
+}
+
+
 /* Forms / Tables 
 **************/
 
@@ -49,6 +67,18 @@ form {
 
 table {
   margin: 2em auto;
+}
+
+#bands-table {
+  opacity: .8;
+}
+
+#bands-table tr td {
+  padding: 2em;
+}
+
+#bands-table tr th {
+  font-size: 2em;
 }
 
 /* Typography 
@@ -65,6 +95,10 @@ h1 {
 	color: white;
 	font-weight: 700;
 	margin-top: .25em;
+}
+
+#title-font {
+  text-shadow: 2px 2px #333;
 }
 
 .section-heading {

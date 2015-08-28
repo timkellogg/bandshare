@@ -5,7 +5,6 @@
   <script src='//code.jquery.com/jquery-1.11.3.min.js'></script>
   <script src='http://cdn.foundation5.zurb.com/foundation.js'></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel='stylesheet' type='text/css' href="<%= url('/main.css') %>">
 </head>
@@ -25,7 +24,8 @@
             <ul class="dropdown">
               <li><a href="/bands/new">Band</a></li>
               <li class="active"><a href="/venues/new">Venue</li></a>
-            </ul>
+              <li><a href="/concerts/new">Concert</li></a>
+            </ul> 
           </li>
         </ul>
       </section>
@@ -36,13 +36,9 @@
   </div>
   <script>
     $(document).foundation();
-
-
-  </script>
-  <script>
-        $(function() {
-        $( "#datepicker" ).datepicker(); 
-      });
+    $(function() {
+         $( "#datepicker" ).datepicker(); 
+       });
   </script>
 
 </body>

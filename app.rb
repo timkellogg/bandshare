@@ -156,24 +156,31 @@ end
 
 ############# Concerts #################
 
-# Index (concerts)
 
-# # Index (bands)
+# Index (concerts)
 get '/concerts' do 
-	@concerts = Concert.all.order(:created_at) 
+	@concerts = Concert.all 
 	erb :concerts 
 end
 
+# New (concerts)
 get '/concerts/new' do  
 	@venues = Venue.all 
 	@bands  = Band.all
 	erb :create_concert_form 
 end
 
-# # New (bands)
-# get '/bands/new' do  
-# 	erb :create_band_form 
-# end
+# Create (concerts)
+post '/concerts' do  
+	@venue = Venue.find(params['venue'].to_i)
+	@band = Band.find(params['band'].to_i)
+	binding.pry
+	if @band.venues.push(@venue)
+		redirect '/concerts'
+	else 
+		redirect '/concerts/new'
+	end 
+end
 
 # # Show (bands)
 # get '/bands/:id' do  

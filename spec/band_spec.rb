@@ -18,7 +18,6 @@ describe Band do
 
 	  it 'should capitalize singular word band names' do  
 	  	@band = Band.create(name: "blink", country_from: "America", music_style: "alternative", bio: 'Not the greatest, but pretty legit.' )
-
 	  	expect(@band.name).to eq 'Blink'
 	  end
 	end

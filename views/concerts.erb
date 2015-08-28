@@ -1,0 +1,23 @@
+<table>
+	<caption>Full Concert Listing</caption>
+	<thead>
+		<tr>
+			<th>Location</th>
+			<th>Venue</th>
+			<th>Band</th>
+			<th>Attendance</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @concerts.each do |concert| %>
+			<tr>
+				<td><%= Venue.find(concert.venue_id).country %></td>
+				<td><%= Venue.find(concert.venue_id).name %></td>
+				<td><%= Band.find(concert.band_id).name %></td>
+				<td><%= concert.attendance %></td>
+				<td><%= concert.date %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

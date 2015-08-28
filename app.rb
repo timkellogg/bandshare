@@ -173,7 +173,7 @@ post '/concerts' do
 	attendance = params['attendance']
 
 	@concert = Concert.new(band_id: params['band'], venue_id: params['venue'], date: date, attendance: attendance )
-	binding.pry
+
 	if @concert.save 
 		redirect '/concerts'
 	else 

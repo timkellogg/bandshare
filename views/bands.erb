@@ -15,15 +15,17 @@
 					<tr>
 						<th>Band Name</th>
 						<th>Origin</th>
-						<th>Music Style<th>
+						<th>Music Style</th>
+						<th>Registered</th>
 					</tr>
 				</thead>
 				<tbody>
 				<% @bands.each do |band| %>
 					<tr>
-						<td><%= band.name %></td>
+						<td><a href="/bands/<%= band.id %>"><%= band.name %></a></td>
 						<td><%= band.country_from %></td>
 						<td><%= band.music_style %></td>
+						<td><%= (band.created_at).strftime("%B, %Y") %></td>
 					</tr>
 				<% end %>
 				</tbody>

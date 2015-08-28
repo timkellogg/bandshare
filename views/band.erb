@@ -1,1 +1,29 @@
-@band 
+<div id="band-show-wrapper">
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2 class="section-heading"><%= @band.name %></h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2 class="subheader"><%= @band.music_style %></h2>
+			<p><%= @band.bio %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-4 columns text-center">
+			<h3 class="subheader">Members Corner</h3>
+		</div>
+		
+		<div class="large-4 columns text-center">
+			<h3 class="subheader">Recent Concerts</h3>
+		</div>
+
+		<div class="large-4 columns text-center">
+			<h3 class="subheader">Title</h3>
+		</div>
+	</div>
+</div>
+

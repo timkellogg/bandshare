@@ -22,8 +22,14 @@ body {
   min-height: 100%;
 }
 
+/*index band page*/
 #bands-wrapper {
   
+}
+
+/*show band page*/
+#band-show-wrapper {
+
 }
 
 /* Forms 
@@ -49,5 +55,9 @@ h1 {
 .section-heading {
   font-size: 6em;
   color: #333;
+}
+
+#brand {
+  color: gold;
 }
 

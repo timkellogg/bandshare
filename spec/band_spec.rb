@@ -4,6 +4,7 @@ describe Band do
 
 	it { should have_and_belong_to_many :venues }
 	it { should validate_presence_of    :name   }
+	it { should validate_uniqueness_of  :name   }  
 
 	context 'when saving the band into the database' do 
 	  it 'should capitalize multiple word band names' do 

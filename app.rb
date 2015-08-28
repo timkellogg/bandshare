@@ -14,15 +14,15 @@ end
 
 # # Index (bands)
 get '/bands' do 
-	@bands = Band.all.order(:created_at) 
+	@bands = Band.all.order(:name) 
 	erb :bands 
 end
 
-# # Show (bands)
-# get '/bands/:id' do  
-# 	@band = Bands.find(params['id'])
-# 	erb :band
-# end
+# Show (bands)
+get '/bands/:id' do  
+	@band = Band.find(params['id'])
+	erb :band
+end
 
 # # New (bands)
 # get '/bands/new' do  

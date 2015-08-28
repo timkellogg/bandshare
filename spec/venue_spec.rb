@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Venue do  
 	it { should have_and_belong_to_many :bands  }
 	it { should validate_presence_of    :name   }
+	it { should validate_uniqueness_of  :name   }
 
 	context 'when saving the venue into the database' do  
 		it 'should capitalize multiple word venue names' do  

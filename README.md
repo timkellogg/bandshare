@@ -14,7 +14,8 @@ _Band Share is a social band tool that lets users locate and find venues and ban
 * `git clone` this file
 * `cd` into the root of the app
 * `rake db:setup` to create db and run migrations
-* `puma app.rb` to start the server
+* `rake db:seed` to seed the db
+* `ruby app.rb` to start the server
 * `rspec` to test both integration and libraries
 
 ###	Technologies Used

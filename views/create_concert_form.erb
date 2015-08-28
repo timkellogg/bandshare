@@ -35,17 +35,16 @@
 		<div class="row">
 			<div class="large-6 text-center columns">
 				<label for="attendance">Attendance (expected):</label>
-      	<input  type="text" name="city" required class="error">
-      	<small class="error">We need to know what when the concert is!</small>
+      	<input type="text" name="attendance" required class="error">
+      	<small class="error">We need to know how many people!</small>
 			</div>
 
 			<div class="large-6 text-center columns">
-				<label for="city">Concert Date:</label>
-      	<input type="text" name="city" required class="error">
+				<label for="date">Concert Date:</label>
+      	<input id="datepicker" type="text" name="date" required class="error">
       	<small class="error">We need to know what when the concert is!</small>
 			</div>
 		</div>
-
 
 		<div class="row">
 			<div class="large-12 columns text-center">
@@ -55,6 +54,13 @@
 	</form>
 </div>
 
+  create_table "concerts", force: :cascade do |t|
+
+    t.boolean  "played_at"
+
+    t.datetime "date"
+    t.integer  "attendance"
+  end
 
 
 

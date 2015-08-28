@@ -5,7 +5,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 after { ActiveRecord::Base.connection.close }
 
-# Bands
+############ Bands ###############
 
 # Landing page
 get '/' do 
@@ -17,7 +17,6 @@ get '/bands' do
 	@bands = Band.all.order(:name) 
 	erb :bands 
 end
-
 
 # New (bands)
 get '/bands/new' do  
@@ -137,19 +136,16 @@ patch '/venues/:id' do
 	end
 end
 
+# Delete (venues)
+get '/venues/:id/delete' do  
+	@venue = Venue.find(params['id'])
 
-# # Delete (venues)
-# get '/venues/:id/delete' do  
-# 	venue = Venue.find(params['id'])
-
-# 	if venue.delete 
-# 		erb :venues 
-# 	else 
-# 		redirect "/venues/#{venue.id}" 
-# 	end
-# end
-
-
+	if @venue.delete 
+		redirect "/venues" 
+	else 
+		redirect "/venues/#{@venue.id}" 
+	end
+end
 
 
 

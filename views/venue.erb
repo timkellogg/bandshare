@@ -9,7 +9,14 @@
 		<div class="large-12 columns text-left">
 			<h2 class="section-header">Capacity: <small><%= @venue.capacity %></small></h2>
 
-				<!-- List recent concerts and Bands that played here -->
+			<h3>Recent Bands that have played here:</h3>
+				<% if @venue.concerts.any? %>
+					<ul>
+						<% @venue.concerts.each do |concert| %>
+							<li><%= Band.find(concert.band_id).name %> | <%= Band.find(concert.band_id).music_style %></li>
+						<% end %>
+					</ul>
+				<% end %>
 		</div>
 	</div>
 

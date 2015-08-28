@@ -68,16 +68,16 @@ patch '/bands/:id' do
 	end
 end
 
-# # Delete (bands)
-# get '/bands/:id/delete' do  
-# 	band = Band.find(params['id'])
+# Delete (bands)
+get '/bands/:id/delete' do  
+	band = Band.find(params['id'])
 
-# 	if band.delete 
-# 		erb :bands 
-# 	else 
-# 		redirect "/bands/#{band.id}" 
-# 	end
-# end
+	if band.delete 
+		redirect "/bands" 
+	else 
+		redirect "/bands/#{band.id}" 
+	end
+end
 
 # # Venues 
 

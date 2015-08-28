@@ -19,7 +19,7 @@
 			<% if @band.concerts.any? %>
 				<ul>
 					<% @band.concerts.each do |concert| %>
-						<li><%= Venue.find(concert.venue_id).country %>, <%= Venue.find(concert.venue_id).city %></li>
+						<li><%= concert.venue.country %>, <%= concert.venue.city %> (<%= concert.attendance %>)</li>
 					<% end %>
 				</ul>
 			<% end %>
@@ -35,4 +35,3 @@
 	  </div>
 	</div>
 </div>
-

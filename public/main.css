@@ -1,0 +1,39 @@
+/* Header fonts */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700italic);
+
+
+
+/* General 
+**************/
+
+.extra-margin-top {
+  margin-top: 1.2em;
+}
+
+body {
+  background: url('/img/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Forms 
+**************/
+
+
+/* Typography 
+***************/
+
+html, html a {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+h1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 8em;
+	color: white;
+	font-weight: 700;
+	margin-top: .25em;
+}

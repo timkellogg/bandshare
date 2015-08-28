@@ -1,0 +1,57 @@
+<div id="form-wrapper" class="container">
+
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2>Book a New Concert</h2>
+		</div>
+	</div>
+
+	<form action="/concerts" method="post" data-abide>
+
+		<div class="row">
+			<div class="large-6 text-center columns">
+				<label for="band">Venue Name:</label>
+				<select name="band">
+						<% @bands.each do |band| %>
+							<option value="<%= band.id %>"><%= band.name %></option>
+						<% end %>					
+				</select>
+				<small class="error">A band is required!</small>
+			</div>
+
+			<div class="large-6 text-center columns">
+				<label for="venue">Venue Name:</label>
+				<select name="venue">
+						<% @venues.each do |venue| %>
+							<option value="<%= venue.id %>"><%= venue.name %></option>
+						<% end %>					
+				</select>
+				<small class="error">A venue is required!</small>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-3 text-center columns">
+				<label for="city">When is/was the concert?</label>
+      	<input id="datepicker" type="text" name="city" required class="error">
+      	<small class="error">We need to know what when the concert is!</small>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<button type="submit">Register Venue!</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+
+
+
+
+
+

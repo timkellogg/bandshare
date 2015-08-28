@@ -164,7 +164,11 @@ get '/concerts' do
 	erb :concerts 
 end
 
-
+get '/concerts/new' do  
+	@venues = Venue.all 
+	@bands  = Band.all
+	erb :create_concert_form 
+end
 
 # # New (bands)
 # get '/bands/new' do  

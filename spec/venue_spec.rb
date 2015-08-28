@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Venue do  
-	it { should have_and_belong_to_many :bands  }
-	it { should validate_presence_of    :name   }
-	it { should validate_uniqueness_of  :name   }
+	it { should have_and_belong_to_many  :bands    }
+	it { should validate_presence_of     :name     }
+	it { should validate_uniqueness_of   :name     }
+	it { should validate_numericality_of :capacity }
+	it { should validate_presence_of     :pic_link }
+	it { should validate_presence_of     :country  }
 
 	context 'when saving the venue into the database' do  
 		it 'should capitalize multiple word venue names' do  
@@ -19,3 +22,4 @@ describe Venue do
 		end
 	end
 end
+

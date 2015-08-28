@@ -37,12 +37,19 @@ body {
 }
 
 #venue-show-wrapper {
-  
+
 }
 
-/* Forms 
+/* Forms / Tables 
 **************/
 
+form {
+  margin: 2em auto;
+}
+
+table {
+  margin: 2em auto;
+}
 
 /* Typography 
 ***************/

@@ -12,9 +12,9 @@
 	<tbody>
 		<% @concerts.each do |concert| %>
 			<tr>
-				<td><%= Venue.find(concert.venue_id).country %></td>
-				<td><%= Venue.find(concert.venue_id).name %></td>
-				<td><%= Band.find(concert.band_id).name %></td>
+				<td><%= concert.venue.country %>, <%= concert.venue.city %></td>
+				<td><%= concert.venue.name %></td>
+				<td><%= concert.band.name %></td>
 				<td><%= concert.attendance %></td>
 				<td><%= concert.date %></td>
 			</tr>

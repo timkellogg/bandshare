@@ -52,18 +52,21 @@ get '/bands/:id/edit' do
 end
 
 
-# # Update (bands)
-# patch '/bands/:id' do  
-# 	@band = Band.find(params['id'])
+# Update (bands)
+patch '/bands/:id' do  
+	@band = Band.find(params['id'])
 
-# 	# Fetch params 
-
-# 	if @band.update({})
-# 		erb: band 
-# 	else 
-# 		redirect "/bands/#{band.id}/edit"
-# 	end
-# end
+	band_name = params['band_name'] 
+	country_from = params['country_from']
+	music_style = params['music_style']
+	bio = params['bio']
+	
+	if @band.update(name: band_name, country_from: country_from, music_style: music_style, bio: bio)
+		erb :band 
+	else 
+		redirect "/bands/#{band.id}/edit"
+	end
+end
 
 # # Delete (bands)
 # get '/bands/:id/delete' do  

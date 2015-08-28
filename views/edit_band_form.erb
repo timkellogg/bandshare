@@ -1,4 +1,68 @@
-<form action="" method="get" accept-charset="utf-8">
+<div id="form-wrapper" class="container">
+
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2>Edit <%= @band.name %></h2>
+		</div>
+	</div>
+
+	<form action="/bands/<%= @band.id %>" method="post" accept-charset="utf-8" data-abide>
+  <input name="_method" type="hidden" value="patch">
 	
-	get
-</form>
+		<div class="row">
+			<div class="large-4 text-center columns">
+				<label for="band_name">Band Name:</label>
+				<input type="text" name="band_name" class="error" required value="<%= @band.name %>">	
+				<small class="error">A band name is required!</small>
+			</div>
+
+			<div class="large-4 text-center columns">
+				<label for="country_from">Where'd the Band Start?</label>
+      	<input type="text" name="country_from" required class="error" value="<%= @band.country_from %>">
+      	<small class="error">We need to know where the band is from!</small>
+			</div>
+
+			<div class="large-4 text-center columns">
+				<label for="music_style">Music Style?</label>
+				<select name="music_style" required class="error">
+					<option value=""></option>
+					<option value="rock">Rock</option>
+					<option value="jazz">Jazz</option>
+					<option value="hip-hop">Hip Hop</option>
+					<option value="rnb">Rythm and Blues (RnB)</option>
+					<option value="blues">Blues</option>
+					<option value="alternative">Alternative</option>
+					<option value="country">Country</option>
+					<option value="island">Island</option>
+					<option value="traditional">Traditional</option>
+					<option value="folk">Folk</option>
+					<option value="rap">Rap</option>
+					<option value="electronic">Electronic</option>
+					<option value="house">House</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<label for="bio">Give Us a Short Bio!</label>
+				<textarea required class="error" maximum="1000" value="<%= @band.bio %>" name="bio"></textarea>
+				<small class="error">Give Us a Bio Less than 1000 Characters</small>
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<button type="submit">Register Band!</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+
+
+
+
+
+

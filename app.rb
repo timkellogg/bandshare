@@ -81,11 +81,11 @@ end
 
 # # Venues 
 
-# # Index (venues)
-# get '/venues' do  
-# 	@venues = Venue.all  
-# 	erb :venues 
-# end
+# Index (venues)
+get '/venues' do  
+	@venues = Venue.all  
+	erb :venues 
+end
 
 # # Show (venues)
 # get '/venues/:id' do  

@@ -1,1 +1,36 @@
-@venues 
+<div id="venues-wrapper" class="container">
+	</div>
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h2 class="section-heading">Venues</h2>
+		</div>
+	</div>
+
+	<% if @venues.any? %>
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<table>
+				<caption>Band Charts</caption>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Country</th>
+						<th>City</th>
+						<th>Capacity</th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @venues.each do |venue| %>
+					<tr>
+						<td><a href="/venues/<%= venue.id %>"><%= venue.name %></a></td>
+						<td><%= venue.country %></td>
+						<td><%= venue.city %></td>
+						<td><%= (venue.created_at).strftime("%B, %Y") %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<% end %>
+

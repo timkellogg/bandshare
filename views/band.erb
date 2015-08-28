@@ -7,7 +7,7 @@
 
 	<div class="row">
 		<div class="large-12 columns text-left">
-			<h2 class="band-section-heading"><%= @band.music_style %></h2>
+			<h2 class="band-section-heading"><%= @band.music_style %></h2><br>
 			<p class="band-section"><%= @band.bio %></p>
 		</div>
 	</div>
@@ -31,6 +31,7 @@
 	    <a class="button info" href="/bands/<%= @band.id %>/edit">Edit</a>
 	    <a class="button warning" href="/bands/<%= @band.id %>/delete">Delete</a>
 	    <a class="button" href="/bands">View all</a>
+	    <a class="button secondary" href="/concerts/new">Book concert</a>
 	  </div>
 	</div>
 </div>

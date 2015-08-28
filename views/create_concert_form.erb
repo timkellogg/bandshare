@@ -12,7 +12,6 @@
 			<div class="large-6 text-center columns">
 				<label for="band">Band Name:</label>
 				<select required name="band" class="error">
-					<option></option>
 					<% @bands.each do |band| %>
 						<option value="<%= band.id %>"><%= band.name %></option>
 					<% end %>					
@@ -23,7 +22,6 @@
 			<div class="large-6 text-center columns">
 				<label for="venue">Venue Name:</label>
 				<select name="venue" required class="error">
-					<option></option>
 					<% @venues.each do |venue| %>
 						<option value="<%= venue.id %>"><%= venue.name %></option>
 					<% end %>					

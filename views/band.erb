@@ -13,16 +13,16 @@
 	</div>
 
 	<div class="row">
-		<div class="large-4 columns text-center">
-			<h3 class="subheader">Members Corner</h3>
-		</div>
-		
-		<div class="large-4 columns text-center">
+		<div class="large-12 columns text-center">
 			<h3 class="subheader">Recent Concerts</h3>
-		</div>
 
-		<div class="large-4 columns text-center">
-			<h3 class="subheader">Title</h3>
+			<% if @band.concerts.any? %>
+				<ul>
+					<% @band.concerts.each do |concert| %>
+						<li><%= Venue.find(concert.venue_id).country %>, <%= Venue.find(concert.venue_id).city %></li>
+					<% end %>
+				</ul>
+			<% end %>
 		</div>
 	</div>
 

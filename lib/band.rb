@@ -3,6 +3,7 @@ class Band < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true 
 	validates :country_from, presence: true 
 	validates :music_style, presence: true 
+	validates :bio, presence: true, length: { maximum: 1000 } 
 	before_save :capitalize_name
 
 	private 

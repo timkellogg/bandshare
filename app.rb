@@ -29,18 +29,19 @@ get '/bands/:id' do
 	@band = Band.find(params['id'])
 	erb :band
 end
-# # Create (bands)
-# post '/bands' do 
-# 	# get params 
+# Create (bands)
+post '/bands' do 
+	band_name = params['band_name'] 
+	country_from = params['country_from']
+	music_style = params['music_style']
 
-# 	# create object 
-
-# 	if @band.save 
-# 		erb :band 
-# 	else 
-# 		redirect '/bands/new'
-# 	end
-# end
+	@band = Band.new(name: band_name, country_from: country_from, music_style: music_style)
+	if @band.save 
+		erb :band 
+	else 
+		redirect '/bands/new'
+	end
+end
 
 # # Edit (bands)
 # get '/bands/:id/edit' do  

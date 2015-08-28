@@ -18,17 +18,17 @@ get '/bands' do
 	erb :bands 
 end
 
+
+# New (bands)
+get '/bands/new' do  
+	erb :create_band_form 
+end
+
 # Show (bands)
 get '/bands/:id' do  
 	@band = Band.find(params['id'])
 	erb :band
 end
-
-# # New (bands)
-# get '/bands/new' do  
-# 	erb :create_band_form 
-# end
-
 # # Create (bands)
 # post '/bands' do 
 # 	# get params 

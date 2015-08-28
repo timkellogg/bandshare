@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe Band do  
 
-	it { should have_and_belong_to_many :venues }
-	it { should validate_presence_of    :name   }
-	it { should validate_uniqueness_of  :name   }  
+	it { should have_and_belong_to_many :venues 			}
+	it { should validate_presence_of    :name   		  }
+	it { should validate_uniqueness_of  :name   		  }  
+	it { should validate_presence_of    :country_from }
+	it { should validate_presence_of    :music_style  }
 
 	context 'when saving the band into the database' do 
 	  it 'should capitalize multiple word band names' do 
@@ -18,3 +20,4 @@ describe Band do
 	  end
 	end
 end
+

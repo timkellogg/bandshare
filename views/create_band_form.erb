@@ -2,11 +2,35 @@
 
 	<div class="row">
 		<div class="large-12 columns text-center">
-			<h1>Register a New Band</h1>
+			<h2>Register a New Band</h2>
 		</div>
 	</div>
 
-	<form action="" method="get" accept-charset="utf-8">
+	<form action="/bands" method="post" accept-charset="utf-8">
+		<div class="row">
+			<div class="large-4 text-center columns">
+				<label for="band_name">Band Name:</label>
+				<input type="text" name="band_name" class="error">	
+				<small class="error">A band name is required!</small>
+			</div>
 
+			<div class="large-4">
+				<label for="country_from">Where'd the Band Start?</label>
+      	<input type="text" name="country_from" required class="error">
+      	<small class="error">We need to know where the band is from!</small>
+			</div>
+		</div>
 	</form>
 </div>
+
+
+<form action="/admin/recipes/" method="post" data-abide>
+  <div class="row">
+    <div class="large-12 text-center columns">
+      <input type="text" cols="10" name="category" required class="error" placeholder="Name of Category">
+      <small class="error">A category name is required.</small>
+
+      <button class="round" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

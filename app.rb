@@ -78,11 +78,6 @@ get '/bands/:id/delete' do
 	end
 end
 
-# Add a venue to a band 
-# get '/bands/:id/concerts/new' do  
-# 	@band = Band.find(params['id'])
-
-# end
 
 ########### Venues ##############
 
@@ -178,7 +173,7 @@ post '/concerts' do
 	attendance = params['attendance']
 
 	@concert = Concert.new(band_id: params['band'], venue_id: params['venue'], date: date, attendance: attendance )
-
+	binding.pry
 	if @concert.save 
 		redirect '/concerts'
 	else 

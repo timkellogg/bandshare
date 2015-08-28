@@ -1,5 +1,6 @@
 class Venue < ActiveRecord::Base 
-	has_and_belongs_to_many :bands, join_table: 'concerts'
+	has_many :concerts 
+	has_many :bands, through: :concerts 
 	validates :name, presence: true, uniqueness: true 
 	validates :city, presence: true 
 	validates :pic_link, presence: true 

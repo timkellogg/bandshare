@@ -22,3 +22,7 @@ end
 	pic_link = "http://i.ytimg.com/vi/-g8UO_8sRqY/maxresdefault.jpg"
 	Venue.create(name: name, city: city, country: country, capacity: capacity, pic_link: pic_link)
 end
+
+100.times do |n|
+
+end

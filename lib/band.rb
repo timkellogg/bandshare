@@ -1,5 +1,6 @@
 class Band < ActiveRecord::Base 
-	has_and_belongs_to_many :venues, join_table: 'concerts'
+	has_many :concerts
+	has_many :venues, through: :concerts
 	validates :name, presence: true, uniqueness: true 
 	validates :country_from, presence: true 
 	validates :music_style, presence: true 
@@ -11,4 +12,6 @@ class Band < ActiveRecord::Base
 	  	self.name = self.name.split.collect(&:capitalize).join(' ') 
 		end
 end
+
+
 

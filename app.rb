@@ -78,6 +78,12 @@ get '/bands/:id/delete' do
 	end
 end
 
+# Add a venue to a band 
+# get '/bands/:id/concerts/new' do  
+# 	@band = Band.find(params['id'])
+
+# end
+
 ########### Venues ##############
 
 # Index (venues)
@@ -146,6 +152,85 @@ get '/venues/:id/delete' do
 		redirect "/venues/#{@venue.id}" 
 	end
 end
+
+
+############# Concerts #################
+
+# Index (concerts)
+
+# # Index (bands)
+get '/concerts' do 
+	@concerts = Concert.all.order(:created_at) 
+	erb :concerts 
+end
+
+
+
+# # New (bands)
+# get '/bands/new' do  
+# 	erb :create_band_form 
+# end
+
+# # Show (bands)
+# get '/bands/:id' do  
+# 	@band = Band.find(params['id'])
+# 	erb :band
+# end
+
+# # Create (bands)
+# post '/bands' do 
+# 	band_name = params['band_name'] 
+# 	country_from = params['country_from']
+# 	music_style = params['music_style']
+# 	bio = params['bio']
+
+# 	@band = Band.new(name: band_name, country_from: country_from, music_style: music_style, bio: bio)
+# 	if @band.save 
+# 		erb :band 
+# 	else 
+# 		redirect '/bands/new'
+# 	end
+# end
+
+# # Edit (bands)
+# get '/bands/:id/edit' do  
+# 	@band = Band.find(params['id'])
+# 	erb :edit_band_form 
+# end
+
+
+# # Update (bands)
+# patch '/bands/:id' do  
+# 	@band = Band.find(params['id'])
+
+# 	band_name = params['band_name'] 
+# 	country_from = params['country_from']
+# 	music_style = params['music_style']
+# 	bio = params['bio']
+	
+# 	if @band.update(name: band_name, country_from: country_from, music_style: music_style, bio: bio)
+# 		erb :band 
+# 	else 
+# 		redirect "/bands/#{band.id}/edit"
+# 	end
+# end
+
+# # Delete (bands)
+# get '/bands/:id/delete' do  
+# 	band = Band.find(params['id'])
+
+# 	if band.delete 
+# 		redirect "/bands" 
+# 	else 
+# 		redirect "/bands/#{band.id}" 
+# 	end
+# end
+
+
+
+
+
+
 
 
 

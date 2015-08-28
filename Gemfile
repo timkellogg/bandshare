@@ -13,4 +13,5 @@ group :test do
 	gem 'pry'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'faker'
 end

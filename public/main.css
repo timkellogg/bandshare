@@ -76,6 +76,30 @@ form {
   margin: 2em auto;
 }
 
+form {
+  padding: .5em;
+  margin-bottom: 1em;
+}
+
+form button {
+  margin-top: 1.5em;
+}
+
+#form-wrapper {
+  background: url('/img/formbg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%; 
+}
+
+form label {
+  color: #fff;
+  background-color: #333;
+  margin-bottom: .25em;
+}
+
 table {
   margin: 2em auto;
 }
@@ -103,7 +127,7 @@ html, html a {
 
 h1 {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 8em;
+	font-size: 6em;
 	color: white;
 	font-weight: 700;
 	margin-top: .25em;
@@ -149,4 +173,5 @@ h1 {
 #brand {
   color: gold;
 }
+
 

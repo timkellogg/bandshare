@@ -91,6 +91,7 @@ end
 get '/venues/new' do  
 	erb :create_venue_form 
 end
+
 # Show (venues)
 get '/venues/:id' do  
 	@venue = Venue.find(params['id'])
@@ -98,18 +99,27 @@ get '/venues/:id' do
 end
 
 
-# # Create (venues)
-# post '/venues' do  
-# 	# fetch params 
+# Create (venues)
+post '/venues' do  
+	name = params['name']
+	city = params['city']
+	capacity = params['capacity']
+	pic_link = params['pic_link']
+	country = params['country']
 
-# 	# create venue 
+	venue = Venue.new(name: name, city: city, country: country, capacity: capacity, pic_link: pic_link)
+	binding.pry
+	if venue.save 
+		binding.pry
+		erb :venue 
+	else 
+		binding.pry
+		redirect "/venues/new"
+	end
+end
 
-# 	if @venue.save 
-# 		erb :venues 
-# 	else 
-# 		redirect "/venues/new"
-# 	end
-# end
+
+
 
 # # Edit (venues)
 # get '/venues/:id/edit' do  

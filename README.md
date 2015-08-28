@@ -1,7 +1,6 @@
-#	band_share
+#	BandShare 
 
-##### _Bringing You the Best Bands Since 2015_, _August 27, 2015_
-
+##### _Bringing You the Best Bands, Concerts and Venues Since August 27, 2015_
 
 #### By **Tim Kellogg**
 
@@ -31,7 +30,8 @@ _Band Share is a social band tool that lets users locate and find venues and ban
 * Front-End: ZURB Foundation/jQuery 
 
 ###	Legal
-Copyright (c) 2015 **Tim Kellogg_**
+
+Copyright (c) 2015 **_Tim Kellogg_**
 
 This software is licensed under the MIT license.
 

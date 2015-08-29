@@ -23,7 +23,7 @@
 						<td><a href="/venues/<%= venue.id %>"><%= venue.name %></a></td>
 						<td><%= venue.country %></td>
 						<td><%= venue.city %></td>
-						<td><%= (venue.created_at).strftime("%B, %Y") %></td>
+						<td><%= venue.capacity %></td>
 					</tr>
 				<% end %>
 				</tbody>
